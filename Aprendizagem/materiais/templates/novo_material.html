@@ -1,0 +1,11 @@
+{% extends 'base_form.html' %}
+
+{% block titulo%}Novo Material{% endblock %}
+
+{% block action %}{{url}}{% endblock %}
+
+{% block campos %}
+	<h1>Novo Material</h1>
+	{{form.as_p}}
+	<p><input type="submit" value="Salvar"></p>
+{% endblock %}

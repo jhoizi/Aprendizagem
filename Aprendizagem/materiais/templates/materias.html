@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static  'css/materialize/css/materialize.min.css' %}">
+	<title>Matérias</title>
+</head>
+<body>
+	<h1>Matérias</h1>
+
+	{% for materia in materias %}
+		<p><a href="{{ url}}/{{materia.id}}">{{ materia.nome }}</a></p>
+	{% endfor %}
+
+</body>
+</html>

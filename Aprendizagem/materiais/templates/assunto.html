@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load formatar_string %}
+{% load  static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static  'css/materialize/css/materialize.min.css' %}">
+	<title>Assunto</title>
+</head>
+<body>
+	<h1>{{ materia.nome }}</h1>
+	<h2>{{ assunto.titulo }}</h2>
+	<p><a href="{{url}}">Novo Material</a></p>
+	<h3>Materiais:</h3>
+	{% for material in materiais %}
+		{% if material.tipo == 'txt' %}
+			<p>{{material.material|formatar_txt_para_html}}</p>
+		{% endif %}
+
+		{% if material.tipo == 'img' %}
+			<p><img style="width: 800px; margin-left: 200px;" src="../../arquivos/{{material.material}}"></p>
+		{% endif %}
+
+	{% endfor %}
+
+	
+</body>
+</html>
